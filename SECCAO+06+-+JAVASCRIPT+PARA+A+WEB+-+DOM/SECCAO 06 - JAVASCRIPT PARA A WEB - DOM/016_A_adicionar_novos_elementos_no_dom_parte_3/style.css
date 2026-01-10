@@ -1,0 +1,18 @@
+* {
+    /* COLORS */
+    --red-color: red;
+
+    /* SETTINGS */
+    box-sizing: border-box;
+    /* font-size: 62.5%; */
+}
+
+.pSize { 
+    font-size: 32px;
+    color: var(--red-color);
+}
+
+.pBold {
+    font-style: italic;
+    font-weight: bold;
+}
