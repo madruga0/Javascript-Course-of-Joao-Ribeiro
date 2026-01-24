@@ -45,30 +45,54 @@ radios.forEach((radio) => {
 // })
 
 // no caso de nome ou email não estarem preenchidos, não permite submeter o formulário.
-document.querySelector("#form1").addEventListener('submit', (event) => {
+// document.querySelector("#form1").addEventListener('submit', (event) => {
 
-    event.preventDefault();
+//     event.preventDefault(); // sem instrucoes claras, nao avance!
 
-    // validar o nome
-    if(textName.value === ''){
-        alert('Por favor preencha o seu nome');
+//     // validar o nome
+//     if(textName.value === ''){
+//         alert('Por favor preencha o seu nome');
+//         textName.focus();
+//         return;
+//     }
+
+//     // validar o email
+//     if(textEmail.value === ''){
+//         alert('Por favor preencha o seu email');
+//         textEmail.focus();
+//         return;
+//     }
+
+//     // tudo foi validado
+//     console.log('formulário OK!');
+
+//     // avançar na submissão do formulário
+//     event.target.submit();
+// });
+
+
+document.querySelector('#form1').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // validar o NOME
+    if(!textName.value) {
+        alert('Preenche o campo do NOME'),
         textName.focus();
-        return;
+        return; // faz com que todo o codigo retorne e nao seja submetido
     }
 
-    // validar o email
-    if(textEmail.value === ''){
-        alert('Por favor preencha o seu email');
-        textEmail.focus();
-        return;
+    // validar o EMAIL
+    if(!textEmail.value) {
+        alert('Preencha o campo do EMAIL')
+        textEmail.focus()
+        return; // faz com que todo o codigo retorne e nao seja submetido
     }
 
     // tudo foi validado
-    console.log('formulário OK!');
+    console.log('Formulario is okay')
+    e.target.submit()
 
-    // avançar na submissão do formulário
-    event.target.submit();
-});
+})
 
 // MUITO IMPORTANTE:
 /* 

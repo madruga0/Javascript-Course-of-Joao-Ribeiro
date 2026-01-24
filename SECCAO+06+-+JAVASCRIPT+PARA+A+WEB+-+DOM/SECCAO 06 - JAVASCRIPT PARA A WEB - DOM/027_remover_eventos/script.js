@@ -35,3 +35,37 @@ function showMessage(message){
     alert(message);
 }
 
+
+
+
+
+
+
+// // 1. Vamos adicionar eventos click a cada um dos três botões.
+// // 2. Os dois primeiros vão apresentar uma mensagem indicando que foram clicados.
+// // 3. O terceiro botão vai remover o evento click dos dois primeiros botões.
+
+
+// // Get 3 button ID's
+// const btn1 = document.querySelector('#btn1')
+// const btn2 = document.querySelector('#btn2')
+// const btn3 = document.querySelector('#btn3')
+
+
+// const handleClickBtn1 = showMessage.bind(null, "Botão 1 clicado");
+// const handleClickBtn2 = showMessage.bind(null, "Botão 2 clicado");
+
+
+// btn1.addEventListener('click', () => {
+//     alert('button 1 was clicked')
+// })
+
+// btn2.addEventListener('click', () => {
+//     alert('button 2 was clicked')
+// })
+
+// btn3.addEventListener('click', () => {
+//     btn1.removeEventListener('click', handleClickBtn1)
+//     btn2.removeEventListener('click', handleClickBtn2)
+//     alert('Eventos removidos dos botoes 1 e 2')
+// })
