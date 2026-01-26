@@ -4,22 +4,41 @@ O método setTimeout recebe dois parâmetros: a função a ser executada e o tem
 O método setTimeout retorna um ID que pode ser usado para cancelar a execução da função com o método clearTimeout.
 */
 
-const btnExecutar = document.querySelector("#btn_executar");
-const btnCancelar = document.querySelector("#btn_cancelar");
-let timeoutId;
+// const btnExecutar = document.querySelector("#btn_executar");
+// const btnCancelar = document.querySelector("#btn_cancelar");
+// let timeoutId;
 
-btnExecutar.addEventListener("click", () => {
-	// Executa a função após 3 segundos
-	timeoutId = setTimeout(() => {
-		alert("Função executada após 3 segundos");
-	}, 3000);
-});
+// btnExecutar.addEventListener("click", () => {
+// 	// Executa a função após 3 segundos
+// 	timeoutId = setTimeout(() => {
+// 		alert("Função executada após 3 segundos");
+// 	}, 3000);
+// });
 
-btnCancelar.addEventListener("click", () => {
-	// Cancela a execução da função
-	clearTimeout(timeoutId);
-});
+// btnCancelar.addEventListener("click", () => {
+// 	// Cancela a execução da função
+// 	clearTimeout(timeoutId);
+// });
 
 // qual a utilidade do setTimeout?
 // O setTimeout pode ser útil para criar animações, exibir mensagens após um determinado tempo
 // ou executar funções que precisam ser executadas após um determinado atraso.
+
+const btnExecute = document.querySelector("#btn_executar");
+const btnCancel = document.querySelector("#btn_cancelar");
+let timeoutId;
+
+btnExecute.addEventListener("click", () => {
+  timeoutId = setTimeout(() => {
+    alert("Funcao executada apos 2 segundos");
+    console.log("Function disparada");
+  }, 2000);
+
+  // O timeoutId eh que vai armazenar o ID do setTimeout, fazendo ele ser acessivel para ser acessado e receber o clearTimeout
+
+});
+
+btnCancel.addEventListener("click", () => {
+  clearTimeout(timeoutId);
+  console.log("Acao da funcao cancelada " + timeoutId);
+});
