@@ -23,21 +23,37 @@ console.log(navigator.userAgent); // Mostra o user agent do navegador
 console.log(navigator.language); // Mostra o idioma do navegador
 console.log(navigator.cookieEnabled); // Mostra se os cookies estão habilitados
 
-// O navigator também possui métodos que podem ser usados para interagir com o navegador
-// Por exemplo, podemos obter a geolocalização do usuário
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(
-    (position) => {
-      console.log("Latitude: " + position.coords.latitude);
-      console.log("Longitude: " + position.coords.longitude);
-    },
-    (error) => {
-      console.error("Erro ao obter a geolocalização: ", error);
-    }
-  );
-}
+// // O navigator também possui métodos que podem ser usados para interagir com o navegador
+// // Por exemplo, podemos obter a geolocalização do usuário
+// if (navigator.geolocation) {
+//   navigator.geolocation.getCurrentPosition(
+//     (position) => {
+//       console.log("Latitude: " + position.coords.latitude);
+//       console.log("Longitude: " + position.coords.longitude);
+//     },
+//     (error) => {
+//       console.error("Erro ao obter a geolocalização: ", error);
+//     }
+//   );
+// }
 
 // neste caso teremos que dar permissão ao navegador para acessar a geolocalização
 
 // temos ainda o método navigator.clipboard que permite acessar a área de transferência do sistema operacional
 // vamos ver como funciona no próximo vídeo
+
+
+const geolocation = navigator.geolocation;
+
+if(geolocation) {
+
+  // callback -> getCurrentPosition( ( position ), ( error ) )
+
+  geolocation.getCurrentPosition(
+    (position) => {
+      console.log('Latitude: ' + position.coords.latitude);
+      console.log('Longitude: ' + position.coords.longitude)
+  },(error) => {
+      console.error("Erro com a geolocalizacao: " + error.message)
+  })
+}
