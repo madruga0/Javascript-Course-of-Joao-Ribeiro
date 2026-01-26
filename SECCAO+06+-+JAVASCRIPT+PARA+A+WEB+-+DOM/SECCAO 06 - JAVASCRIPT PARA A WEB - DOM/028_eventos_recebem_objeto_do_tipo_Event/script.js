@@ -1,13 +1,16 @@
 /* 
 Quando adicionamos um evento a um elemento, além de estarmos a definir um
 comportamento para o elemento, implícitamente conseguimos ter acesso ao elemento
-ao qual o evento foi adicionado. Ou seja, o elemento que disparou o evento é
+ao qual o evento foi adicionado. 
+
+Ou seja, o elemento que disparou o evento é
 acessível através da propriedade target do evento.
 */
 
 const bnt1 = document.querySelector('#btn1');
 const bnt2 = document.querySelector('#btn2');
 const bnt3 = document.querySelector('#btn3');
+const btn4 = document.querySelector('#btn4');
 
 bnt1.addEventListener('click', (event)=>{
     console.log(event);
@@ -27,6 +30,28 @@ bnt2.addEventListener('click', (event) => {
     console.log(event.target.innerHTML);
     console.log(event.target.id);
 });
+
+
+// e || event
+btn4.addEventListener('click', (e) => {
+
+    // tambem posso fazer dessa forma
+    let obj = e.target
+
+    // console.log(e)
+    // console.log(e.target)
+    // // a mesma coisa, VISUALMENTE falando
+    // console.log(e.target.innerHTML)
+    // console.log(e.target.innerText)
+    // // 
+    // console.log(e.target.id)
+    // console.log(e.target.classList[0])
+
+
+    console.log(obj.id)
+    console.log(obj.innerHTML)
+    console.log(obj.classList[1])
+})
 
 /* 
 Tal como foi referido, existem outros tipos de eventos:
