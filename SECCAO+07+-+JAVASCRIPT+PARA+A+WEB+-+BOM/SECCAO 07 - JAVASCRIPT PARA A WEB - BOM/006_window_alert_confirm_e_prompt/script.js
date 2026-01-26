@@ -34,7 +34,7 @@ O objeto window tem associado a si três métodos que permitem interagir com o u
 //     } else {
 //         alert("O utilizador não introduziu nenhum nome.");
 //     }
-        
+
 //     // o prompt() também aceita um segundo parâmetro que define o valor padrão do campo de entrada de texto
 //     // const name = prompt("Qual é o seu nome?", "Nome padrão");
 
@@ -46,6 +46,7 @@ O objeto window tem associado a si três métodos que permitem interagir com o u
 const btn1 = document.querySelector('#btn1')
 const btn2 = document.querySelector('#btn2')
 const btn3 = document.querySelector('#btn3')
+const btn4 = document.querySelector('#btn4')
 
 // alert
 btn1.addEventListener('click', () => {
@@ -71,3 +72,15 @@ btn3.addEventListener('click', () => {
         alert('Nome vazio')
     }
 })
+
+// prompt with default name
+btn4.addEventListener('click', () => {
+    const defaultName = prompt('Qual o seu nome?', 'Your name') // um tipo de 'placeholder'
+    if(defaultName) {
+        alert('Welcome ' + defaultName)
+    } else {
+        alert('User not found: ' + defaultName)
+    }
+})
+
+
