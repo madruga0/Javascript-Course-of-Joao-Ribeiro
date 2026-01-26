@@ -1,0 +1,5 @@
+BOM -> B rowser O bject M odel
+
+- objetos fornecidos pelos navegadores
+- interacao 
+- window, location, history, navigator, screen, timers(setTimeout) e intervalos(setInterval), armazenamento(Local Storage e Session Storage)
