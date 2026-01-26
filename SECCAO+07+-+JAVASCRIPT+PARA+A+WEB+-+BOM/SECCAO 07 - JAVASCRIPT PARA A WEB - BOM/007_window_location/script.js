@@ -38,7 +38,8 @@ btn1.addEventListener("click", () => {
 const btn2 = document.querySelector("#btn2");
 btn2.addEventListener("click", () => {
     // window.location.reload(); // recarrega a página atual
-    window.location.reload(true); // recarrega a página atual ignorando o cache
+    // window.location.reload(true); // recarrega a página atual ignorando o cache
+    window.location.reload(true)
 
 });
 
