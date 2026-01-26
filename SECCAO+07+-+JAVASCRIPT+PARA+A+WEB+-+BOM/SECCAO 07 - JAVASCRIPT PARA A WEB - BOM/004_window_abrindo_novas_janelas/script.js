@@ -30,5 +30,10 @@ document.querySelector('#open4').addEventListener('click', () => {
     window.open('https://www.google.com', 'Google', 'width=800,height=600,top=200,left=200');
 });
 
+let open5 = document.querySelector('#open5')
+open5.addEventListener('click', () => {
+    window.open('https://stackoverflow.com', 'Stackoverflow', 'width=1000, height=1000')
+})
+
 // IMPORTANTE: Existem outros parâmetros possíveis, mas nos navegadores mais modernos, como o Chrome, 
 // muitos deles são ignorados por questões de segurança.

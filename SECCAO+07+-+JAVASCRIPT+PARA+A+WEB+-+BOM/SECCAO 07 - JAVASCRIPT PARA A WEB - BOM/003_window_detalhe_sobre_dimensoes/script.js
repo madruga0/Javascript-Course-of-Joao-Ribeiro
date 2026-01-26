@@ -20,29 +20,67 @@ Os principais são:
 // vamos adicionar um evento resize e vamos mostrar as propriedades da window
 
 const info = document.querySelector('#info');
-info.innerHTML = getDimentions();
+info.innerHTML = getDimensions();
 
+
+// evento para as informacoes serem atualizadas ao redimensionamento em live-action
 window.addEventListener('resize', () => {
-    info.innerHTML = getDimentions();
-});
+    info.innerHTML = getDimensions()
+})
 
-function getDimentions(){
+function getDimensions(){
     return `
         <p>innerWidth: ${window.innerWidth}px</p>
         <p>innerHeight: ${window.innerHeight}px</p>
         <p>outerWidth: ${window.outerWidth}px</p>
-        <p>outerHeight: ${window.outerHeight}px</p>
+        <p>outerHeigth: ${window.outerHeight}px</p>
+
+
         <p>scrollX: ${window.scrollX}px</p>
         <p>scrollY: ${window.scrollY}px</p>
+
+
         <p>screenX: ${window.screenX}px</p>
         <p>screenY: ${window.screenY}px</p>
+
+
         <p>screen.width: ${window.screen.width}px</p>
-        <p>screen.height: ${window.screen.height}px</p>
+        <p>screen.heigth: ${window.screen.height}px</p>
+
+
         <p>screen.availWidth: ${window.screen.availWidth}px</p>
-        <p>screen.availHeight: ${window.screen.availHeight}px</p>
+        <p>screen.availHeigth: ${window.screen.availHeight}px</p>
+
+
         <p>screen.orientation.type: ${window.screen.orientation.type}</p>
     `;
 }
+
+
+// const info = document.querySelector("#info");
+// info.innerHTML = getDimensions()
+
+// window.addEventListener('resize', () => {
+//     info.innerHTML = getDimensions();
+// })
+
+// const getDimensions = () => {
+//     return `
+//         <p>innerWidth: ${window.innerWidth}px</p>
+//         <p>innerHeight: ${window.innerHeight}px</p>
+//         <p>outerWidth: ${window.outerWidth}px</p>
+//         <p>outerHeight: ${window.outerHeight}px</p>
+//         <p>scrollX: ${window.scrollX}px</p>
+//         <p>scrollY: ${window.scrollY}px</p>
+//         <p>screenX: ${window.screenX}px</p>
+//         <p>screenY: ${window.screenY}px</p>
+//         <p>screen.width: ${window.screen.width}px</p>
+//         <p>screen.height: ${window.screen.height}px</p>
+//         <p>screen.availWidth: ${window.screen.availWidth}px</p>
+//         <p>screen.availHeight: ${window.screen.availHeight}px</p>
+//         <p>screen.orientation.type: ${window.screen.orientation.type}</p>
+//     `
+// }
 
 /* 
 Vamos observar que window.scrollX e window.scrollY são sempre 0, pois não temos barra de rolagem.
