@@ -15,10 +15,17 @@ Por esse motivo, não é possível remover eventos para funções anónimas,
 uma vez que não conseguimos referenciar a função anónima.
 */
 
+
+// capturar os 3 botoes do nosso documento
 const btn1 = document.querySelector("#btn1");
+
 const btn2 = document.querySelector("#btn2");
+
 const btn3 = document.querySelector("#btn3");
 
+const btn4 = document.querySelector('#btn4')
+
+// bind -> 
 const handleClickBtn1 = showMessage.bind(null, "Botão 1 clicado");
 const handleClickBtn2 = showMessage.bind(null, "Botão 2 clicado");
 
@@ -31,7 +38,13 @@ btn3.addEventListener('click', () => {
     alert("Eventos removidos do botão 1 e 2");
 });
 
-function showMessage(message){
+btn4.addEventListener('click', () => {
+    btn1.addEventListener('click', handleClickBtn1)
+    btn2.addEventListener('click', handleClickBtn2);
+    alert('Eventos do botao 1 e 2 RESTAURADOS')
+})
+
+function showMessage ( message ) {
     alert(message);
 }
 
