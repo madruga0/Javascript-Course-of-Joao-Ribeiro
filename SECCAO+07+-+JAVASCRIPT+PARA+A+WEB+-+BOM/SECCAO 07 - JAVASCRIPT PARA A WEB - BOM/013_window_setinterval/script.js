@@ -13,31 +13,44 @@ let seconds = 0;
 let timerId = null;
 let isRunning = false;
 
-btnStart.addEventListener('click', startTimer);
-btnStop.addEventListener('click', stopTimer);
-btnReset.addEventListener('click', resetTimer);
+btnStart.addEventListener("click", startTimer);
+btnStop.addEventListener("click", stopTimer);
+btnReset.addEventListener("click", resetTimer);
 
 function startTimer() {
-	if(isRunning) return; // Evita iniciar o timer se já estiver em execução
-	isRunning = true;
-	timerId = setInterval(() => {
-		seconds++;
-		updateDisplay();
-	}, 1000);
+  if (isRunning) return; // Evita iniciar o timer se já estiver em execução
+  isRunning = true;
+
+  //
+  timerId = setInterval(() => {
+    seconds++;
+    updateDisplay();
+  }, 1000);
+  // a cada vez que for atualizado, atualizar o display com os segundos na tela
+  //
 }
 
-function stopTimer(){
-	if(!isRunning) return; // Evita parar o timer se não estiver em execução
-	isRunning = false;
-	clearInterval(timerId);
+function stopTimer() {
+  if (!isRunning) return; // Evita parar o timer se não estiver em execução
+  isRunning = false;
+  clearInterval(timerId);
 }
 
-function resetTimer(){
-	stopTimer();
-	seconds = 0;
-	updateDisplay();
+/**
+ * stopTimer() => para tudo
+ * seconds = 0
+ * updateDisplay() => atualiza o display
+ */
+function resetTimer() {
+  stopTimer();
+  seconds = 0;
+  updateDisplay();
 }
 
-function updateDisplay(){
-	timerDisplay.textContent = seconds;
+/**
+ * o conteudo do timerDisplay (span) => sera igual aos segundos sendo atualizados na tela.
+ */
+
+function updateDisplay() {
+  timerDisplay.textContent = seconds;
 }
