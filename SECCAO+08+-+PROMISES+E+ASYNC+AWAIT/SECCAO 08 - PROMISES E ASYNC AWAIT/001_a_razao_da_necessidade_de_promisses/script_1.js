@@ -4,21 +4,21 @@ Vamos assumir uma função que devolve uma lista de utilizadores.
 Cada utilizador é um objeto com as propriedades nome e idade.
 */
 
-function getUsers(){
-    return [
-        { name: "Joao", age: 25 },
-        { name: "Luis", age: 35 },
-        { name: "Carlos", age: 45 },
-    ];
+function getUsers() {
+  return [
+    { name: "Joao", age: 25 },
+    { name: "Luis", age: 35 },
+    { name: "Carlos", age: 45 },
+  ];
 }
 
-/* 
+/*
 Se quisermos encontrar um utilizador com um nome específico, podemos usar a seguinte função.
 */
 
-function findUser(name){
-    const users = getUsers();
-    return users.find( user => user.name === name);
+function findUser(name) {
+  const users = getUsers();
+  return users.find((user) => user.name === name);
 }
 
 /*
@@ -33,3 +33,25 @@ A função funciona como esperado e devolve o utilizador com o nome 'Jack'.
 Mas faz isso de forma síncrona. E se quisermos obter os utilizadores de um servidor?
 A função getUsers pode demorar algum tempo a obter os utilizadores do servidor.
 */
+
+function getUsers() {
+  return [
+    { name: "Pedro", age: 23 },
+    { name: "Madruga", age: 24 },
+    { name: "Fulaninho", age: 25 },
+  ];
+}
+
+// vamos buscar a lista toda do cliente
+function findUser(name) {
+  const users = getUsers();
+  return users.find((user) => user.name === name)
+}
+
+
+console.log(findUser('Pedro'))
+console.log(findUser('Madruga'))
+
+
+
+
