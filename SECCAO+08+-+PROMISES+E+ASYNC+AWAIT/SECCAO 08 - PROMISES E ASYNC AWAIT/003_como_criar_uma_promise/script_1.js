@@ -34,3 +34,15 @@ PS: não confundas o estado resolvido com o estado cumprido (função resolve).
 Uma nota final: raramente criamos um objeto promise diretamente. Na maioria das vezes, 
 usamos uma biblioteca que retorna um objeto promise.
 */
+
+
+let promise1 = new Promise((resolve, reject) => {
+    
+    // operation
+
+    if(success) {
+        resolve(value)
+    } else {
+        reject(error)
+    }
+})
