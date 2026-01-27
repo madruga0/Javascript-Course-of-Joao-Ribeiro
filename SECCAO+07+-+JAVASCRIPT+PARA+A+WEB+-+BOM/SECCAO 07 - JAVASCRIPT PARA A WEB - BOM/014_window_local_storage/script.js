@@ -69,3 +69,11 @@ localStorage.clear();
 // e armazenar os dados em um servidor seguro, em vez de armazená-los no navegador do usuário.
 // Além disso, o localStorage e o sessionStorage são vulneráveis a ataques de Cross-Site Scripting (XSS),
 // onde um invasor pode injetar scripts maliciosos em uma página da web e acessar os dados armazenados
+
+
+
+
+let key = 'Name'
+let value = 'Pedro Madruga'
+
+localStorage.setItem(key, value)
