@@ -48,16 +48,22 @@ mas com algumas diferenças importantes:
 // Application > Session Storage > http://xxxx.
 
 // adicionar um valor no sessionStorage
-sessionStorage.setItem('minha_chave', 'Esta informação vai ser guardada no sessionStorage');
+/**
+ * sessionStorage.setItem(key, value)
+ */
+sessionStorage.setItem(
+  "minha_chave",
+  "Esta informação vai ser guardada no sessionStorage",
+);
 
 // buscar o valor no sessionStorage
-let chave1 = 'minha_chave';
+let chave1 = "minha_chave";
 let valor1 = sessionStorage.getItem(chave1);
 
 // se a chave não existir, o valor será null
 
 // remover uma chave do sessionStorage
-sessionStorage.removeItem('minha_chave_que_nao_existe');
+sessionStorage.removeItem("minha_chave_que_nao_existe");
 // ou remover todas as chaves do sessionStorage
 sessionStorage.clear();
 // Não é necessário limpar o sessionStorage, pois ele é limpo automaticamente quando a aba ou janela do navegador é fechada.
