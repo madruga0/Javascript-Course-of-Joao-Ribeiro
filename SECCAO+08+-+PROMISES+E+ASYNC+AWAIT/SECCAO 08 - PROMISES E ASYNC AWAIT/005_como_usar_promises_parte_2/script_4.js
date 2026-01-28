@@ -34,25 +34,72 @@ Podemos simplificar o código...
 
 // fragmentando para entender melhor
 
-let hasSucessful = true;
+// let hasSucessful = true;
 
-const hasSuccesful = () => {
+// const hasSuccesful = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (hasSucessful) {
+//         resolve("sucess");
+//       } else {
+//         reject("unsucessful");
+//       }
+//     }, 1000);
+//   });
+// };
+
+// hasSuccesful().then(
+//   (dados) => {
+//     console.log(dados);
+//   },
+//   (erro) => {
+//     console.log(erro);
+//   },
+// );
+
+// let hasSuccess = false;
+
+// function gotSuccess() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (hasSuccess) {
+//         resolve("success");
+//       } else {
+//         reject("rejected");
+//       }
+//     }, 2000);
+//   });
+// }
+
+// gotSuccess().then(
+//   (data) => {
+//     console.log(data)
+//   },
+//   (error) => {
+//     console.error(error)
+//   },
+// );
+
+const arr = ["Pedro", "Tiago", "Joao"];
+
+function getFirstName() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (hasSucessful) {
-        resolve("sucess");
+      const foundedName = arr.find((name) => name === "Joao");
+
+      if (foundedName) {
+        resolve("Found name: " + foundedName);
       } else {
-        reject("unsucessful");
+        reject("Name not found");
       }
     }, 1000);
   });
-};
+}
 
-hasSuccesful().then(
-  (dados) => {
-    console.log(dados);
-  },
-  (erro) => {
-    console.log(erro);
-  },
-);
+getFirstName()
+  .then((message) => {
+    console.log(message);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
