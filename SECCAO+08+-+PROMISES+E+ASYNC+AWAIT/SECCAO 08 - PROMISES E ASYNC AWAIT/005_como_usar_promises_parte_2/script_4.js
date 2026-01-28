@@ -104,3 +104,25 @@ getFirstName()
     console.log(error);
   })
   .finally(() => console.log("Promise finalizada."));
+
+// const arrNumbers = ['1, 2, 3, 4, 5'];
+
+// function getNumber() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const num = arrNumbers.find((num) => num == '1');
+//       if (num) {
+//         resolve("Number found: ", num);
+//       } else {
+//         reject("Number not FOUND: ");
+//       }
+//     }, 1500);
+//   });
+// }
+
+// getNumber()
+//   .then((msg) => {
+//     console.log(msg);
+//     return msg;
+//   })
+//   .catch((error) => console.error(error));
