@@ -2,20 +2,16 @@
 Vamos tornar o código mais conciso utilizando a sintaxe de funções de seta (arrow functions).
 */
 
-function getUsers(){
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(
-                [
-                    {name: "Joao", age: 25},
-                    {name: "Luis", age: 35},
-                    {name: "Carlos", age: 45},
-                ]
-            );
-        }, 3000);
-    });
+function getUsers() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([
+        { name: "Pedro", age: 23 },
+        { name: "Madruga", age: 24 },
+      ]);
+    }, 3000);
+  })
 }
-
 
 const prom = getUsers();
 
