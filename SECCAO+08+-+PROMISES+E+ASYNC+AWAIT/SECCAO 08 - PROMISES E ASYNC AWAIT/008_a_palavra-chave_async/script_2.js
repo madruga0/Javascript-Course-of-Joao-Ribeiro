@@ -4,13 +4,13 @@ Também podemos devolver uma promise explicitamente a partir de uma função asy
 
 // Exemplo
 async function sayHello1() {
-    return Promise.resolve("Hello 1");
+  return Promise.resolve("Hello 1");
 }
 
 // ou
-let sayHello2 = async function(){
-    return "Hello 2";
-}
+let sayHello2 = async function () {
+  return "Hello 2";
+};
 
 // ou
 let sayHello3 = async () => "Hello 3";
@@ -18,9 +18,9 @@ let sayHello3 = async () => "Hello 3";
 // E podemos ter classes com métodos async
 
 class worldClass {
-    async sayHello() {
-        return "Hello 4";
-    }
+  async sayHello() {
+    return "Hello 4";
+  }
 }
 
 // para obter todos os valores de cada função, podemos usar o método .then()
@@ -30,3 +30,15 @@ sayHello3().then(console.log); // Hello 3
 
 let world = new worldClass();
 world.sayHello().then(console.log); // Hello 4
+
+// class Car {
+//   marca;
+//   modelo;
+
+
+// }
+
+// let newCar = new Car();
+// newCar.marca = "Ford";
+// newCar.modelo = "Fusion";
+// newCar.vrum().then(console.log);
