@@ -102,4 +102,5 @@ getFirstName()
   })
   .catch((error) => {
     console.log(error);
-  });
+  })
+  .finally(() => console.log("Promise finalizada."));

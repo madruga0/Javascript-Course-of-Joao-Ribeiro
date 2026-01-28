@@ -26,4 +26,5 @@ function getUsers() {
 
 const prom = getUsers();
 
+// so sera executada se ocorrer um erro
 prom.catch( error => console.log(error));
