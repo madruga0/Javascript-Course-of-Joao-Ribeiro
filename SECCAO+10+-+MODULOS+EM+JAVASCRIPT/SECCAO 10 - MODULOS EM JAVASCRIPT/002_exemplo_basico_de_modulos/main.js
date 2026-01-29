@@ -9,6 +9,7 @@ de módulos nativos no JavaScript. Atualmente, a maioria dos navegadores moderno
 ambientes de execução JavaScript, como o Node.js, suportam módulos ES6.
 */
 
-import { dizerOla } from "./module_script.js";
+import { dizerOla, helloWorld } from "./module_script.js";
 
 dizerOla();
+helloWorld();
