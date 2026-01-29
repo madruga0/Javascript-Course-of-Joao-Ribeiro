@@ -9,6 +9,7 @@ document.querySelector("#btn_piada").addEventListener('click', async () => {
 
     console.log('Passo 1');
 
+    // essa promise vai ficar a espera ate ser transportada para o interior da response
     let response = await fetch("https://api.chucknorris.io/jokes/random");
 
     console.log('Passo 2');
@@ -16,7 +17,10 @@ document.querySelector("#btn_piada").addEventListener('click', async () => {
     if(response.ok){
         // sucesso
         console.log('Passo 3 - resposta OK!');
-        
+        /**
+         * A partir do momento que eu tenho a resposta -> 'response.ok'
+         * Ele vai esperar que a resposta seja transformada em json() -> objeto novamente -> data: linha 24
+         */ 
         let data = await response.json();
         document.querySelector("#resultado").innerHTML = data.value;
         
