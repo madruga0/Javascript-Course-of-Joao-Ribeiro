@@ -25,24 +25,33 @@ Tem a seguinte estrutura:
 const btn = document.querySelector("#btn");
 const informacao = document.querySelector("#informacao");
 
-btn.addEventListener('click', () => {
-    fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
-    .then((response) => {
-        if(!response.ok){
-            throw new Error("Aconteceu um erro");
-        }
-        return response.json();
-    })
-    .then((data) => {
-            document.querySelector("#imagem").src = data.url; // A imagem do dia
-            document.querySelector("#titulo").innerHTML = data.title; // O título
-            document.querySelector("#descricao").innerHTML = data.explanation; // A descrição
-            document.querySelector("#data").innerHTML = data.date; // A data
+btn.addEventListener("click", () => {
 
-            // tornar visível a área de informação
-            informacao.classList.remove("hidden");
-        })
-        .catch((error) => {
-            informacao.innerHTML = error;
-        })
+    let URL = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+
+  fetch(URL)
+
+
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Aconteceu um erro");
+      }
+      return response.json(); // vai devolver uma promise, que sera um tipo de variavel pra o proximo then() -> magia do encapsulamento
+    })
+
+
+    .then((data) => {
+      document.querySelector("#imagem").src = data.url; // A imagem do dia
+      document.querySelector("#titulo").innerHTML = data.title; // O título
+      document.querySelector("#descricao").innerHTML = data.explanation; // A descrição
+      document.querySelector("#data").innerHTML = data.date; // A data
+
+      // tornar visível a área de informação
+      informacao.classList.remove("hidden");
+    })
+
+    
+    .catch((error) => {
+      informacao.innerHTML = error;
+    });
 });
