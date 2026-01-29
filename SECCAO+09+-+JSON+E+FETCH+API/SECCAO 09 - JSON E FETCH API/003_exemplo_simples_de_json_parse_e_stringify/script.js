@@ -8,7 +8,7 @@ Manipular JSON significa duas coisas:
 */
 
 // vamos buscar o exemplo do JSON do site https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON
-// vamos clicar no botão para copiar e vamos colar aqui: 
+// vamos clicar no botão para copiar e vamos colar aqui:
 // NOTA: vamos colar o JSON em uma variável do tipo string e vamos usar crase para quebrar a string em várias linhas
 
 const json = `{
@@ -62,32 +62,32 @@ console.log(obj);
 // significa que vamos transformar uma coleção de dados de JavaScript em uma string JSON
 
 const colecao = {
-    "empresa": "Minha Empresa",
-    "telefone": "123456789",
-    "email": "minhaempresa@gmail.com",
-    "endereco": {
-        "rua": "Rua 1",
-        "numero": 123,
-        "bairro": "Centro",
-        "cidade": "São Paulo",
-        "estado": "SP",
-        "pais": "Brasil"
-    },
-    "colaboradores": [
-        { nome: "Joao", idade: 20 },
-        { nome: "Maria", idade: 30 },
-        { nome: "Jose", idade: 40 },
-        { nome: "Ana", idade: 50 },
-        { nome: "Pedro", idade: 60 },
-    ],
-    "produtos": [
-        { nome: "Produto 1", preco: 10 },
-        { nome: "Produto 2", preco: 20 },
-        { nome: "Produto 3", preco: 30 },
-        { nome: "Produto 4", preco: 40 },
-        { nome: "Produto 5", preco: 50 },
-    ]
-}
+  empresa: "Minha Empresa",
+  telefone: "123456789",
+  email: "minhaempresa@gmail.com",
+  endereco: {
+    rua: "Rua 1",
+    numero: 123,
+    bairro: "Centro",
+    cidade: "São Paulo",
+    estado: "SP",
+    pais: "Brasil",
+  },
+  colaboradores: [
+    { nome: "Joao", idade: 20 },
+    { nome: "Maria", idade: 30 },
+    { nome: "Jose", idade: 40 },
+    { nome: "Ana", idade: 50 },
+    { nome: "Pedro", idade: 60 },
+  ],
+  produtos: [
+    { nome: "Produto 1", preco: 10 },
+    { nome: "Produto 2", preco: 20 },
+    { nome: "Produto 3", preco: 30 },
+    { nome: "Produto 4", preco: 40 },
+    { nome: "Produto 5", preco: 50 },
+  ],
+};
 
 // vamos transformar o objeto JavaScript em uma string JSON
 const jsonString = JSON.stringify(colecao);
@@ -98,7 +98,7 @@ console.log(jsonString);
 // com o JSON em formato string e com a informação estruturada, outra aplicação pode receber a informação e efetuar a desserialização
 // permitindo que a informação seja manipulada pelos sistemas.
 
-// É assim que a esmagadora maioria das APIs funcionam. 
+// É assim que a esmagadora maioria das APIs funcionam.
 // 1 - é efetuado um pedido de dados
 // 2 - o servidor responde com um JSON (estrutura de dados)
 // 3 - o cliente (navegador ou outro sistema) efetua a desserialização do JSON
