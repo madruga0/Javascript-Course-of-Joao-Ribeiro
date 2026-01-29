@@ -15,39 +15,46 @@ const btnBuscarCategorias = document.querySelector("#btn_categorias");
 
 const baseURL = "https://api.chucknorris.io/jokes/";
 
-btnBuscarPiada.addEventListener('click', () => {
-    // Faz uma requisição GET para obter uma piada aleatória
-    fetchRequest(baseURL + "random");
+btnBuscarPiada.addEventListener("click", () => {
+  // Faz uma requisição GET para obter uma piada aleatória
+  fetchRequest(baseURL + "random");
 });
 
-btnBuscarCategorias.addEventListener('click', () => {
-    // Faz uma requisição GET para obter a lista de categorias
-    fetchRequest(baseURL + "categories");
+btnBuscarCategorias.addEventListener("click", () => {
+  // Faz uma requisição GET para obter a lista de categorias
+  fetchRequest(baseURL + "categories");
 });
 
-function fetchRequest(url){
-    console.log(url);
+function fetchRequest(url) {
 
-    fetch(url)
-        .then((response) => {
-            if(!response.ok){
-                throw new Error('Aconteu um erro');
-            }
-            return response.json()
-        })
-        .then((data) => {
+  console.log(url);
 
-            if('value' in data){
-                document.querySelector("#resultado").innerHTML = data.value; // Se for uma piada
-            }
+  fetch(url)
 
-            if(Array.isArray(data)){
-                document.querySelector("#resultado").innerHTML = data.join(" | "); // Se for uma lista de categorias
-            }
-        })
-        .catch((error) => {
-            document.querySelector("#resultado").innerHTML = error;
-        })
+    // first then -> return response.json() -> retorna uma promise
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Aconteceu um erro");
+      }
+      return response.json();
+    })
+
+    // second then
+    .then((data) => {
+      if ("value" in data) {
+        document.querySelector("#resultado").innerHTML = data.value; // Se for uma piada
+      }
+
+      // se nos recebermos um array, em vez de um objeto, teremos uma nova estrutura de informacao
+      if (Array.isArray(data)) {
+        document.querySelector("#resultado").innerHTML = data.join(" | "); // Se for uma lista de categorias
+      }
+    })
+
+    // catch para o error
+    .catch((error) => {
+      document.querySelector("#resultado").innerHTML = error;
+    });
 }
 
 // neste exemplo, manipulámos a URL através de uma concatenção de strings.
