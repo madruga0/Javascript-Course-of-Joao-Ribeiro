@@ -12,9 +12,9 @@ https://api.chucknorris.io/jokes/random
 */
 
 document.querySelector("#btn").addEventListener("click", () => {
-  fetch("https://api.chucknorris.io/jokes/random  ")
+  fetch("https://api.chucknorris.io/jokes/random")
     .then((response) => {
-      if (!response.ok || response.status == 404) {
+      if (!response.ok) {
         throw new Error("Network response was not ok"); // Se a resposta não for ok, lança um erro
         // quando eh lancado um erro, a aplicacao vai parar.
       }
@@ -25,11 +25,17 @@ document.querySelector("#btn").addEventListener("click", () => {
     // O método .then() é chamado quando a promise é resolvida com sucesso
     .then((data) => {
       document.querySelector("#resultado").innerHTML = data.value; // value é o campo que contém a piada
+      setTimeout(() => {
+        console.log("SUCCESFUL");
+      }, 200);
     })
 
     // O método .catch() é chamado quando a promise é rejeitada
     .catch((error) => {
       document.querySelector("#resultado").innerHTML = error;
+      setTimeout(() => {
+        console.log("UNSUCCESFUL");
+      }, 200);
     });
 });
 
